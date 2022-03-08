@@ -1,5 +1,10 @@
-.App {
-  text-align: center;
+.topContainer{
+display:flex;
+flex-direction:row
+
+
+
+
 }
 
 .slider{
@@ -24,4 +29,12 @@
   color: #000;
 }
 
+.poster{
+height:350px;
+width:350px
 
+
+
+
+}
+>>>>>>> 7717845b40a6b193b0a5d89972fcb7fd0daf27a0
