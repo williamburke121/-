@@ -6,7 +6,7 @@ function MovieCollection (){
     const [collection, setCollection] = useState([])
 
 useEffect (() => {
-    fetch('https://api.themoviedb.org/3/collection/translations?api_key=d511bcf90e5a983aed2cad9b8f36549d&language=en-US')
+    fetch('http://localhost:8001/BadFlix')
     .then(resp => resp.json())
     .then (data => console.log(data))
 })

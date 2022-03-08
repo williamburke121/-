@@ -1,3 +1,9 @@
+# Welcome to BadFlix!
+
+- In order to pull infromation run "http://localhost:8001/BadFlix" in your local server
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
