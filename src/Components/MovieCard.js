@@ -1,20 +1,12 @@
 import {React} from 'react'
-import {BsFillArrowRightCircleFill, BsFillLeftRightCircleFill} from 'react-icons/bs'
 
 
-function MovieCard (){
+function MovieCard ({movie, onCardClick}) {
     return (
         <div>
-        <div className="scroll-right"  onClick={() => console.log('Clicked')}>
-        <img src='' alt="cover art" className="show-art"/>
-        <div className="details-container">
-            <header>
-                <h3>Movie Name</h3>                    
-            </header>
-                <p>Movie Summary</p>
+        <img key={movie.id} src={movie.image} alt="" /> 
+       <button onClick={() =>  onCardClick(movie)} >AddToWatchList</button>
         </div>
-    </div>
-    </div>
     )
 }
 
