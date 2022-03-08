@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css';
-import MovieCollection from './Components/MovieCollection';
+import MovieCollectionSlider from './Components/MovieCollectionSlider';
 
 
 function App() {
   return (
-    <MovieCollection />
+    <MovieCollectionSlider />
   );
   
 }
