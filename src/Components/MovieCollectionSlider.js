@@ -10,8 +10,8 @@ function MovieCollectionSlider({movies, onCardClick}) {
 
   return (
       <Swiper
-        slidesPerView={5}
-        spaceBetween={10}
+        slidesPerView={7}
+        spaceBetween={5}
         freeMode={true}
         pagination={{
           clickable: true,
@@ -21,8 +21,8 @@ function MovieCollectionSlider({movies, onCardClick}) {
       >
         {movies.map((movie) => {
         return (
-        <SwiperSlide key={movie.id}>
-        <MovieCard movie={movie}  onClick={onCardClick}/>
+        <SwiperSlide >
+        <MovieCard  key={movie.id} movie={movie}  onCardClick={onCardClick}/>
         </SwiperSlide>
         )})}
       </Swiper>

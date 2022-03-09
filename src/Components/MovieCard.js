@@ -4,8 +4,9 @@ import {React} from 'react'
 function MovieCard ({movie, onCardClick}) {
     return (
         <div>
+        <button onClick={() => onCardClick(movie)()} >
         <img key={movie.id} src={movie.image} alt="" /> 
-       <button onClick={() =>  onCardClick(movie)} >AddToWatchList</button>
+        </button>
         </div>
 // function MovieCard (){
 //     return (

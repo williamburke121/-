@@ -8,8 +8,8 @@ function WatchLater({movies, onCardClick}) {
 
     return (
         <Swiper
-          slidesPerView={5}
-          spaceBetween={10}
+          slidesPerView={7}
+          spaceBetween={5}
           freeMode={true}
           pagination={{
             clickable: true,
@@ -20,8 +20,8 @@ function WatchLater({movies, onCardClick}) {
         >
             {movies.map((movie) => {
           return (
-          <SwiperSlide key={movie.id} onCardClick={onCardClick}>
-          <MovieCard movie={movie} onCardClick={onCardClick}/> 
+          <SwiperSlide>
+          <MovieCard  key={movie.id} movie={movie} onCardClick={onCardClick}/> 
           </SwiperSlide>
           )})}
         </Swiper>
