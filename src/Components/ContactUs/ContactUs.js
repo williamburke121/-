@@ -8,7 +8,7 @@ function ContactUs () {
     <form action="submit" method="post">
  <ul>
   <li>
-    <label> Name</label>
+    <label> Name </label>
     <input type="text" className="movie_Name"/>
   </li>
   <li>

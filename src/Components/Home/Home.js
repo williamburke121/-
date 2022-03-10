@@ -4,13 +4,14 @@ import MovieCollectionSlider from '../MovieCollectionSlider/MovieCollectionSlide
 import WatchLater from '../WatchLater/WatchLater';
 import NavBar from '../NavBar/NavBar';
 import SideDrawer from '../SideDrawer/SideDrawer';
+import Backdrop from '../Backdrop/Backdrop';
+import MostPopular from "../MostPopular";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "../../styles.css";
-import Backdrop from '../Backdrop/Backdrop';
-import MostPopular from "../MostPopular";
-import { IoContractSharp } from 'react-icons/io5';
+import './Home.css'
+
 
 // import StaffPics from '../StaffPics';
 

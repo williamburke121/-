@@ -6,6 +6,7 @@ import MovieCard from "../MovieCard/MovieCard";
 
 
 
+
 function MovieCollectionSlider({movies, onCardClick}) {
 
   return (
