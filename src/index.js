@@ -4,10 +4,13 @@ import './index.css';
 import App from './Components/App';
 import "swiper/css/bundle";
 import "./styles.css";
+import {BrowserRouter} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

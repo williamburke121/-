@@ -1,7 +1,8 @@
 import {React} from 'react'
-
+import {IoSearchOutline} from 'react-icons/io5'
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton'
 import './NavBar.css'
+import { NavLink } from 'react-router-dom'
 
 
 function NavBar ({onClick, toggle}) {
@@ -17,8 +18,19 @@ function NavBar ({onClick, toggle}) {
                 <div className='navbar_navigation-items'>
                     <ul>
                         <li><a href="/">Home</a> </li>
-                        <li><a href="/">Watch Later</a> </li>
+                        <NavLink to='/addmovieform'>
+                        <li><a href="/addmovieform">Add Movie</a></li>
+                        </NavLink>
                     </ul>
+                </div>
+                <div className="search">
+                    <form action="#">
+                        <input type="text"
+                        placeholder=" Search Movies"
+                        name="search"/>
+                        <button className="search_button"><IoSearchOutline/></button>
+                    </form>
+                <div/>
                 </div>
             </nav>
         </header>

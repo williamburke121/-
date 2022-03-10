@@ -1,7 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
-import MovieCard from "./MovieCard";
+import MovieCard from "../MovieCard/MovieCard";
 
 
 function WatchLater({movies, onCardClick}) {
