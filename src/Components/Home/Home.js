@@ -9,6 +9,8 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "../../styles.css";
 import Backdrop from '../Backdrop/Backdrop';
+import MostPopular from "../MostPopular";
+import { IoContractSharp } from 'react-icons/io5';
 
 
 function Home () {
@@ -58,14 +60,16 @@ function Home () {
   useEffect(()=> {
     fetch(`http://localhost:8001/movies`)
     .then(resp => resp.json())
-    .then(data => setMovies(data))
+    .then(data => {setMovies(data)
+    console.log(data)}) 
   },[])
 
 
   useEffect(()=> {
     fetch(`http://localhost:8001/favorites`)
     .then(resp => resp.json())
-    .then(data => setWatchList(data))
+    .then(data => {setWatchList(data) 
+      console.log(data)})
   },[])
 
 
@@ -86,6 +90,7 @@ function Home () {
     <MovieCollectionSlider movies={movies} onCardClick={addToWatchList}/>
     <h2>Watch Later</h2>
     <WatchLater movies={watchList} onCardClick={removeMovie} />
+    <MostPopular movies={movies}/>
     </div>
   );
   

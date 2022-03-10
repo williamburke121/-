@@ -28,7 +28,8 @@ function NavBar ({onClick}) {
                 <div>
                     <DrawerToggleButton  onClick={onClick} toggle={toggle}/>
                 </div>
-                <div className='navbar_logo'><a href="/">The LOGO</a></div>
+                <img className= "navbar_logo" src="flix.png" alt = ""/>
+                
                 <div className='spacer'/>
                 <div className='navbar_navigation-items'>
                     <ul> 
