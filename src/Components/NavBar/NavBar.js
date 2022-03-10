@@ -1,12 +1,27 @@
-import {React} from 'react'
+import {React, useState} from 'react'
 import {IoSearchOutline} from 'react-icons/io5'
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton'
 import './NavBar.css'
 import { NavLink } from 'react-router-dom'
 
 
-function NavBar ({onClick, toggle}) {
+function NavBar ({onClick}) {
+
+    const [toggle, setToggle] = useState (false)
+
+    function handleDrawerToggle () {
+        console.log('clicked')
+        if(toggle){
+          setToggle(false)
+        }
+        else {
+          setToggle(true)
+        }
+      }
+    
+
     return (
+
 
         <header className='navbar'>
             <nav className='navbar_navigation'>
@@ -16,10 +31,15 @@ function NavBar ({onClick, toggle}) {
                 <div className='navbar_logo'><a href="/">The LOGO</a></div>
                 <div className='spacer'/>
                 <div className='navbar_navigation-items'>
-                    <ul>
-                        <li><a href="/">Home</a> </li>
-                        <NavLink to='/addmovieform'>
-                        <li><a href="/addmovieform">Add Movie</a></li>
+                    <ul> 
+                        <NavLink to='/home'>
+                        <li>Home</li>
+                        </NavLink>
+                        <NavLink to='/addmovieform'> 
+                        <li>Add Movie</li>
+                        </NavLink>
+                        <NavLink to='/contactus'>
+                        <li>Contact Us</li>
                         </NavLink>
                     </ul>
                 </div>

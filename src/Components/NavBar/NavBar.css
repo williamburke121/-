@@ -34,13 +34,14 @@
 }
 
 .search form {
-    margin: 0;
     padding: 0;
     display: flex;
     list-style-type: none;
     position: flex;
-    left: 0;
+    right: 25%;
     align-items: center;
+    margin: auto;
+    width: 100%;
 }
 
 .navbar_navigation-items a:hover,

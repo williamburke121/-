@@ -4,31 +4,20 @@ import MovieCollectionSlider from '../MovieCollectionSlider/MovieCollectionSlide
 import WatchLater from '../WatchLater/WatchLater';
 import NavBar from '../NavBar/NavBar';
 import SideDrawer from '../SideDrawer/SideDrawer';
-// import '../App.css';
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "../../styles.css";
 import Backdrop from '../Backdrop/Backdrop';
-import AddMovieForm from '../Add Movie Form/AddMovieForm';
+
 
 function Home () {
 
   const [movies, setMovies] = useState([])
-  const [watchList , setWatchList] = useState([])
   const [toggle, setToggle] = useState (false)
-  const [page, setPage] = useState("/")
+  const [watchList , setWatchList] = useState([])
 
-  function getCurrentPage(){
-    switch(page){
-      case "/": 
-        return <Home /> 
-      case "/addmovieform":
-        return <AddMovieForm />
-      default:
-        return <h1>404 not found</h1>
-    }
-  }
+
 
   function handleDrawerToggle () {
     console.log('clicked')
@@ -44,12 +33,26 @@ function Home () {
   function addToWatchList (addmovie) {
     if(watchList.every(movie => movie.id !== addmovie.id)){
       setWatchList([...watchList, addmovie])
-    }
-    console.log(watchList)
+      fetch(`http://localhost:8001/favorites`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(addmovie),
+  });
   }
+  }
+  
 
   function removeMovie (movie) {
-    setWatchList(watchList.filter(movieShow => movieShow.id !== movie.id))
+    if(setWatchList(watchList.filter(movieShow => movieShow.id !== movie.id))){
+      fetch(`http://localhost:8001/favorites`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
 }
 
   useEffect(()=> {
@@ -57,12 +60,24 @@ function Home () {
     .then(resp => resp.json())
     .then(data => setMovies(data))
   },[])
+
+
+  useEffect(()=> {
+    fetch(`http://localhost:8001/favorites`)
+    .then(resp => resp.json())
+    .then(data => setWatchList(data))
+  },[])
+
+
+
+
+
     
  
 
   return (
     <div style={{height: '100%'}} >
-    <NavBar toggle={toggle} onClick={handleDrawerToggle}/>
+    <NavBar toggle={toggle} onClick={handleDrawerToggle} />
     {toggle ? <SideDrawer/> : null}
     {toggle ? <Backdrop onClick={handleDrawerToggle} toggle={toggle}/> : null}
     <main style={{marginTop: '64px'}}>

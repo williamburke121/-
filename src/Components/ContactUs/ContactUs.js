@@ -1,24 +1,26 @@
 import React from 'react'
-import './AddMovieForm.css'
 
 
-
-function AddMovieForm (){
-    return (
-    <div className="shity_movie">
-    <h1>Add your Shitty Movie</h1>
+function ContactUs () {
+ return(  
+     <div>
+    <h1>Contact Us</h1>
     <form action="submit" method="post">
  <ul>
   <li>
-    <label> Movie Name:</label>
+    <label> Name</label>
     <input type="text" className="movie_Name"/>
   </li>
   <li>
-    <label>Image Link:</label>
+      <label>Email</label>
+      <input type="text" className="email"></input>
+  </li>
+  <li>
+    <label>Type of Issue</label>
     <input type="text" className="image_link" />
   </li>
   <li>
-    <label >Description:</label>
+    <label >Issue Explanned</label>
     <textarea className="description" ></textarea>
   </li>
   <input type="submit" value="Submit"></input>
@@ -29,5 +31,4 @@ function AddMovieForm (){
 }
 
 
-
-export default AddMovieForm;
+export default ContactUs

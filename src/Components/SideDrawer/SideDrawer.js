@@ -1,12 +1,16 @@
 import React from 'react';
 import './SideDrawer.css';
+import {Link} from 'react-router-dom';
+
+
 
 
 const siderDrawer = props => (
     <nav className='side-drawer'>
         <ul>
-            <li><a href="/"> Home</a> </li>
-            <li><a href="/"> Watch Later</a> </li>
+            <li><Link to="/home">Home</Link> </li>
+            <li><Link to="/addmovieform">Add Movie</Link> </li>
+            <li><Link to="/contactus">Contact Us</Link> </li>
         </ul>
     </nav>
 
