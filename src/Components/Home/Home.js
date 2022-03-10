@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import "../../styles.css";
 import Backdrop from '../Backdrop/Backdrop';
 import AddMovieForm from '../Add Movie Form/AddMovieForm';
+import MostPopular from "../MostPopular";
 
 function Home () {
 
@@ -71,6 +72,8 @@ function Home () {
     <MovieCollectionSlider movies={movies} onCardClick={addToWatchList}/>
     <h2>Watch Later</h2>
     <WatchLater movies={watchList} onCardClick={removeMovie} />
+    <MostPopular movies={movies}/>
+
     </div>
   );
   
