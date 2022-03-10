@@ -12,6 +12,7 @@ import "../../styles.css";
 import Backdrop from '../Backdrop/Backdrop';
 import AddMovieForm from '../Add Movie Form/AddMovieForm';
 import MostPopular from "../MostPopular";
+import StaffPics from '../StaffPics';
 
 function Home () {
 
@@ -73,8 +74,9 @@ function Home () {
     <h2>Watch Later</h2>
     <WatchLater movies={watchList} onCardClick={removeMovie} />
     <MostPopular movies={movies}/>
+    
 
-    </div>
+  </div>
   );
   
 }
