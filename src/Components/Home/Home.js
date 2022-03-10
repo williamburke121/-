@@ -12,6 +12,8 @@ import Backdrop from '../Backdrop/Backdrop';
 import MostPopular from "../MostPopular";
 import { IoContractSharp } from 'react-icons/io5';
 
+// import StaffPics from '../StaffPics';
+
 
 function Home () {
 
@@ -47,15 +49,15 @@ function Home () {
   
 
   function removeMovie (movie) {
-    if(setWatchList(watchList.filter(movieShow => movieShow.id !== movie.id))){
-      fetch(`http://localhost:8001/favorites`, {
+    setWatchList(watchList.filter(movieShow => movieShow.id !== movie.id))
+      fetch(`http://localhost:8001/favorites/` + movie.id, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
       });
     }
-}
+
 
   useEffect(()=> {
     fetch(`http://localhost:8001/movies`)
@@ -93,7 +95,6 @@ function Home () {
     <MostPopular movies={movies}/>
     </div>
   );
-  
 }
 
 export default Home;

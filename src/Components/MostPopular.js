@@ -1,8 +1,8 @@
 import React from "react";
 import {SliderData} from "./SliderData"
 
-function MostPopular(){
-    const movieList = SliderData.map((slide, id) => {
+function MostPopular() {
+    const movieList = SliderData.map((slide) => {
         return <img className="poster" key={slide.id} src={slide.image} alt="" /> 
     })
         return(

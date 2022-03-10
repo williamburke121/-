@@ -14,7 +14,7 @@ import ContactUs from './ContactUs/ContactUs';
 function App() {
 
   return (
-    <div style={{height: '100%'}}>
+    <div className='body' style={{height: '100%'}}>
             <Switch>
                 <Route exact path="/">
                     <Home />
